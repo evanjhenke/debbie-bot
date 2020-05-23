@@ -4,7 +4,6 @@ const client = new Discord.Client();
 const prefix = "$";
 
 client.on('ready', () => {
-  console.log('ready');
   client.user.setActivity('sound asleep (or is she?)');
 });
 
@@ -20,5 +19,4 @@ client.on('message', (message) => {
 
 });
 
-console.log('before login');
 client.login(token);
