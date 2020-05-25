@@ -1,6 +1,6 @@
-const channelToJoin = () => {
+const getChannelToJoin = () => {
   try {
-    const config = require('./../config');
+    let config = require('./../config');
     return config.channelToJoin;
   } catch (e) {
     return process.env.channelToJoin;
@@ -8,7 +8,7 @@ const channelToJoin = () => {
 };
 
 const getBackRoom = (channelsCache) => {
-  const channelToJoin = channelToJoin();
+  let channelToJoin = getChannelToJoin();
   let room = null;
   channelsCache.forEach((channel) => {
     if (channelToJoin && channel.name === channelToJoin) {

@@ -10,7 +10,7 @@ module.exports = (client) => {
 
     files.forEach((file) => {
       if (file.endsWith(extension)) {
-        let func = require(`./event-handlers`);
+        let func = require(`./event-handlers/${file}`);
 
         if(func &&
           typeof func === 'function' &&
